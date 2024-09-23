@@ -5,5 +5,5 @@ Kelompok 3
 2. Nurul Uzratun Nashriyyah
 3. Maulana Fikri
 4. M. Agradika Ridhal Eljatin
-4. Arifa Muthmainnah
+5. Arifa Muthmainnah
 
