@@ -42,12 +42,11 @@ class SurveyQuestionSeeder extends Seeder
             'Apakah Anda pernah didiagnosis dengan depresi atau gangguan mental lainnya?',
             
             // Indikator Keuangan dan Pekerjaan
-            'Apakah Anda merasa khawatir tentang beban keuangan selama masa studi akhir?',
+            'Apakah Anda pernah merasa khawatir tentang beban keuangan selama masa studi akhir?',
             'Apakah Anda memiliki pekerjaan sampingan atau tanggung jawab finansial yang menambah beban pikiran Anda?',
             
             // Indikator Kualitas Hidup
-            'Seberapa puas Anda dengan keseimbangan antara studi, kehidupan pribadi, dan pekerjaan?',
-            'Seberapa sering Anda merasa stres berat selama satu bulan terakhir?'
+            'Apakah Anda pernah merasa stres berat selama satu bulan terakhir?'
         ];
 
         foreach ($questions as $question) {
