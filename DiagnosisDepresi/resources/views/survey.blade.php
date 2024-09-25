@@ -20,6 +20,7 @@
         h1 {
             text-align: center;
             color: #112754;
+            font-size: 28px;
         }
 
         form {
@@ -33,13 +34,14 @@
 
         .question {
             margin-bottom: 20px;
-            padding: 15px;
+            padding: 25px;
             background-color: #f9f9f9;
             border-radius: 5px;
             border: 1px solid #ddd;
         }
 
         .question p {
+            font-size: 18px;
             font-weight: bold;
             color: #555;
             margin-bottom: 10px;
@@ -47,13 +49,13 @@
 
         .options {
             display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
+            font-size: 16px;
+            flex-direction: column;
         }
 
         label {
             cursor: pointer;
-            flex: 1; /* Makes options take equal width */
+            margin-bottom: 10px;
         }
 
         label input[type="radio"] {
@@ -72,13 +74,13 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            flex: 1; /* Makes buttons take equal space */
+            width: 100%;
         }
 
         button[type="submit"] {
             background-color: #275f8f; /* Green color for submit button */
             color: white;
-            margin-left: 500px;
+            margin-left: 10px;
         }
 
         button[type="submit"]:hover {
@@ -88,11 +90,36 @@
         button[type="button"] {
             background-color: #9ea6ad; /* Red color for back button */
             color: white;
-            margin-left: 10px; /* Adds space between buttons */
         }
 
         button[type="button"]:hover {
             background-color: #7a3722;
+        }
+
+        @media (min-width: 768px) {
+            .options {
+                font-size: 28px;
+                flex-direction: row; /* Horizontal options on larger screens */
+                justify-content: space-between;
+            }
+
+            .question p {
+                font-size: 14px; /* Larger question text */
+            }
+
+            .button-container {
+                justify-content: space-between;
+            }
+
+            button {
+                width: auto;
+                flex: 1;
+                margin: 0 10px;
+            }
+
+            button[type="submit"] {
+                margin-left: 0;
+            }
         }
     </style>
 </head>

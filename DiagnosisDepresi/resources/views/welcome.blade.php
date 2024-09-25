@@ -14,40 +14,47 @@
             background-position: center;
             margin: 0;
             padding: 0;
-            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensures content fills the viewport vertically */
         }
 
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 90vh;
             padding: 20px;
-            margin-left: 60px;
+            width: 100%;
+            max-width: 1200px;
+            height: 100%; /* Makes sure the container takes full height */
         }
 
         .content {
-            background-color: rgba(255, 255, 255, 0.8); /* Slight transparency for better readability */
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
-            max-width: 800px;
+            max-width: 1000px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
         }
 
         .text-section {
-            flex: 1;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 54px;
+            font-size: 36px;
             margin-bottom: 20px;
             color: #112754;
         }
 
         p {
-            font-size: 24px;
+            font-size: 18px;
             margin-bottom: 20px;
             color: #112754;
         }
@@ -56,10 +63,10 @@
             display: inline-block;
             background-color: #224563;
             color: white;
-            padding: 20px 30px;
+            padding: 15px 25px;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .text-section a:hover {
@@ -67,23 +74,60 @@
         }
 
         .image-section img {
-            max-width: 400px;
+            max-width: 100%;
+            height: auto;
             border-radius: 10px;
-            margin-right: 100px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+
+            .content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 40px;
+            }
+
+            .text-section {
+                text-align: left;
+                flex: 1;
+            }
+
+            h1 {
+                font-size: 54px;
+            }
+
+            p {
+                font-size: 24px;
+            }
+
+            .image-section {
+                margin-left: 20px;
+            }
+
+            .image-section img {
+                max-width: 400px;
+                margin-top: 0;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="text-section">
-            <h1>Selamat Datang di Student-DepCheck</h1>
-            <p>Website ini membantu Anda dalam mendeteksi gejala depresi dengan menjawab beberapa pertanyaan.</p>
-           <a href="{{ route('survey.show') }}">Get Test</a> <!-- Tautan ke halaman survei -->
-        </div>
-       <div class="image-section">
-            <img src="https://static.vecteezy.com/system/resources/previews/021/656/058/non_2x/relationship-icon-free-png.png" alt="Illustration"> <!-- Replace with your image URL -->
+        <div class="content">
+            <div class="text-section">
+                <h1>Student-DepCheck</h1>
+                <p>This website helps you detect symptoms of depression by answering several questions.</p>
+                <a href="{{ route('survey.show') }}">Get Test</a> <!-- Tautan ke halaman survei -->
+            </div>
+            <div class="image-section">
+                <img src="https://static.vecteezy.com/system/resources/previews/021/656/058/non_2x/relationship-icon-free-png.png" alt="Illustration"> <!-- Replace with your image URL -->
+            </div>
         </div>
     </div>
-
 </body>
 </html>

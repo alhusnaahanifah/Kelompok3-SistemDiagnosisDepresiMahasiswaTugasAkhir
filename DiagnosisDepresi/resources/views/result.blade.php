@@ -11,13 +11,13 @@
             background-image: url('https://static.vecteezy.com/system/resources/previews/022/514/324/non_2x/white-gradient-abstract-curve-pattern-free-photo.jpeg'); 
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Makes background fixed while scrolling */
+            background-attachment: fixed; /* Background fixed while scrolling */
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 85vh; /* Ensures content fills the viewport */
         }
 
         .container {
@@ -28,6 +28,7 @@
             text-align: center;
             max-width: 600px;
             width: 100%;
+            margin: 20px;
         }
 
         h1 {
@@ -37,7 +38,7 @@
         }
 
         p {
-            font-size: 20px;
+            font-size: 18px;
             color: #333;
         }
 
@@ -57,10 +58,29 @@
             cursor: pointer;
             font-size: 16px;
             margin-top: 20px;
+            width: 100%; /* Button takes full width on small screens */
         }
 
         button:hover {
             background-color: #7a3722;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding: 40px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+            button {
+                width: auto; /* Button size adjusts on larger screens */
+            }
         }
     </style>
 </head>
