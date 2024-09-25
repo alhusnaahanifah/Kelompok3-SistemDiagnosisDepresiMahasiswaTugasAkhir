@@ -97,7 +97,7 @@
     </style>
 </head>
 <body>
-    <h1>Test Depression</h1>
+    <h1>Depression Test</h1>
     <form action="{{ route('survey.submit') }}" method="POST">
         @csrf
         @foreach ($questions as $question)

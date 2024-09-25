@@ -31,13 +31,13 @@ class SurveyController extends Controller
         }
 
         // Analisis hasil berdasarkan skor
-        if ($totalScore >= 20) {
+        if ($totalScore >= 67) {
             $result = "Depresi sangat berat";
-        } elseif ($totalScore >= 15) {
+        } elseif ($totalScore >= 46) {
             $result = "Depresi berat";
-        } elseif ($totalScore >= 10) {
+        } elseif ($totalScore >= 31) {
             $result = "Depresi sedang";
-        } elseif ($totalScore >= 5) {
+        } elseif ($totalScore >= 16) {
             $result = "Depresi ringan";
         } else {
             $result = "Tidak menunjukkan tanda-tanda depresi";
