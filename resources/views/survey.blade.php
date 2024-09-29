@@ -98,13 +98,13 @@
 
         @media (min-width: 768px) {
             .options {
-                font-size: 28px;
+                font-size: 18px;
                 flex-direction: row; /* Horizontal options on larger screens */
                 justify-content: space-between;
             }
 
             .question p {
-                font-size: 14px; /* Larger question text */
+                font-size: 18px; /* Larger question text */
             }
 
             .button-container {
