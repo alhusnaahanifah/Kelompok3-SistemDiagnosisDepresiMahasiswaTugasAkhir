@@ -7,7 +7,7 @@
 - M Agradika Ridhal Eljatin (2208107010020)
 - Maulana Fikri (2208107010042)
 
-### Student-DepCheck
+## Student-DepCheck
 Website ini bertujuan untuk membantu mahasiswa tingkat akhir utuk mendeteksi gejala depresi mellalui kuisioner berbasis skala Likert. Paa website ini terdapat sistem otommatis menghitung skor dan memberikan analisi tingkat depresi secara cepat dan mudah diakses. Student-Depcheck ini dapat ditingkatkan dengan integrasi mechine learning di masa depan, memungkinkan diagnosis yang lebih personal dan akurat serta mendukung pengguna dengan saran berkelanjutan.
 
 
