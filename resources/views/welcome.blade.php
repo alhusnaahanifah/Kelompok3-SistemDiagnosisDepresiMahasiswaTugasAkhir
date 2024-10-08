@@ -17,7 +17,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Ensures content fills the viewport vertically */
+            min-height: 100vh;
         }
 
         .container {
@@ -27,24 +27,15 @@
             padding: 20px;
             width: 100%;
             max-width: 1200px;
-            height: 100%; /* Makes sure the container takes full height */
+            height: 100%;
         }
 
         .content {
             background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
             max-width: 1000px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .text-section {
-            text-align: center;
-            margin-bottom: 20px;
         }
 
         h1 {
@@ -54,64 +45,51 @@
         }
 
         p {
-            font-size: 18px;
-            margin-bottom: 20px;
+            font-size: 16px;
+            margin-bottom: 15px;
             color: #112754;
+            line-height: 1.5;
         }
 
-        .text-section a {
+        .description {
+            margin-bottom: 20px;
+        }
+
+        a.button {
             display: inline-block;
             background-color: #224563;
             color: white;
-            padding: 15px 25px;
+            padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 18px;
+            font-size: 16px;
         }
 
-        .text-section a:hover {
+        a.button:hover {
             background-color: #6a89a3;
         }
 
-        .image-section img {
-            max-width: 100%;
+        .logo {
+            float: right;
+            width: 100px;
             height: auto;
-            border-radius: 10px;
-            margin-top: 20px;
         }
 
         @media (min-width: 768px) {
-            .container {
-                flex-direction: row;
-            }
-
             .content {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
                 padding: 40px;
             }
 
-            .text-section {
-                text-align: left;
-                flex: 1;
-            }
-
             h1 {
-                font-size: 54px;
+                font-size: 48px;
             }
 
             p {
-                font-size: 24px;
+                font-size: 18px;
             }
 
-            .image-section {
-                margin-left: 20px;
-            }
-
-            .image-section img {
-                max-width: 400px;
-                margin-top: 0;
+            .logo {
+                width: 150px;
             }
         }
     </style>
@@ -119,14 +97,14 @@
 <body>
     <div class="container">
         <div class="content">
-            <div class="text-section">
-                <h1>Student-DepCheck</h1>
-                <p>This website helps you detect symptoms of depression by answering several questions.</p>
-                <a href="{{ route('survey.show') }}">Get Test</a> <!-- Tautan ke halaman survei -->
+            <img src="https://static.vecteezy.com/system/resources/previews/021/656/058/non_2x/relationship-icon-free-png.png" alt="Logo" class="logo">
+            <h1>Student-DepCheck</h1>
+            <div class="description">
+                <p>Depresi adalah kondisi kesehatan mental yang memengaruhi perasaan, pikiran, dan perilaku seseorang. Ini lebih dari sekadar rasa sedih biasa dan bisa mengganggu aktivitas sehari-hari.</p>
+                <p>Mengecek depresi itu penting, terutama bagi mahasiswa tingkat akhir yang menghadapi banyak tekanan. Dengan mengenali gejala lebih awal, Anda bisa mendapatkan bantuan yang tepat dan mencegah masalah menjadi lebih serius.</p>
+                <p>Student-DepCheck membantu Anda mengenali tanda-tanda depresi melalui beberapa pertanyaan sederhana. Ingat, ini bukan diagnosis, tapi langkah awal untuk memahami kesehatan mental Anda.</p>
             </div>
-            <div class="image-section">
-                <img src="https://static.vecteezy.com/system/resources/previews/021/656/058/non_2x/relationship-icon-free-png.png" alt="Illustration"> <!-- Replace with your image URL -->
-            </div>
+            <a href="{{ route('survey.show') }}" class="button">Get Test</a>
         </div>
     </div>
 </body>
