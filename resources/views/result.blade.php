@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stu-DepCheck</title>
     <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/021/656/058/non_2x/relationship-icon-free-png.png" type="image/png">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         /* CSS Reset */
@@ -315,7 +313,7 @@
                 </div>
             @endforeach 
         </div>
-        <a class="consultation-link" href="https://example.com/konsultasi" target="_blank">Ingin Berkonsultasi lebih lanjut?</a>
+        <a class="consultation-link" href="https://www.halodoc.com/kesehatan-mental?srsltid=AfmBOorsIQVgj55VWdFYZTQ02HNBitAg6xKqO3-klzgPiCDTGbW5axTI" target="_blank">Ingin Berkonsultasi lebih lanjut?</a>
     </div>
 
     <!-- Tombol Kembali -->
