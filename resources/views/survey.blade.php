@@ -123,24 +123,39 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Depression Test</h1>
-    <form action="{{ route('survey.submit') }}" method="POST">
+    <form action="{{ route('survey.submit') }}" method="POST" id="surveyForm">
         @csrf
-        @foreach ($questions as $question)
-            <div class="question">
-                <p>{{ $question->question_text }}</p>
-                <div class="options">
-                    <label><input type="radio" name="answers[{{ $question->id }}]" value="0" required> Tidak Pernah</label>
-                    <label><input type="radio" name="answers[{{ $question->id }}]" value="1" required> Kadang-kadang</label>
-                    <label><input type="radio" name="answers[{{ $question->id }}]" value="2" required> Sering</label>
-                    <label><input type="radio" name="answers[{{ $question->id }}]" value="3" required> Hampir setiap hari</label>
+        @foreach ($questions as $index => $question)
+            @if ($index < 10)
+                <div class="question page1">
+                    <p>{{ $question->question_text }}</p>
+                    <div class="options">
+                        <label><input type="radio" name="answers[{{ $question->id }}]" value="0" required> Tidak Pernah</label>
+                        <label><input type="radio" name="answers[{{ $question->id }}]" value="1" required> Kadang-kadang</label>
+                        <label><input type="radio" name="answers[{{ $question->id }}]" value="2" required> Sering</label>
+                        <label><input type="radio" name="answers[{{ $question->id }}]" value="3" required> Hampir setiap hari</label>
+                    </div>
                 </div>
-            </div>
+            @else
+                <div class="question page2" style="display:none;">
+                    <p>{{ $question->question_text }}</p>
+                    <div class="options">
+                        <label><input type="radio" name="answers[{{ $question->id }}]" value="0" required> Tidak Pernah</label>
+                        <label><input type="radio" name="answers[{{ $question->id }}]" value="1" required> Kadang-kadang</label>
+                        <label><input type="radio" name="answers[{{ $question->id }}]" value="2" required> Sering</label>
+                        <label><input type="radio" name="answers[{{ $question->id }}]" value="3" required> Hampir setiap hari</label>
+                    </div>
+                </div>
+            @endif
         @endforeach
         <div class="button-container">
-            <button type="button" onclick="confirmBack()">Kembali</button>
-            <button type="submit">Kirim Jawaban</button>
+            <button type="button" id="backButton" onclick="confirmBack()">Kembali ke Beranda</button>
+            <button type="submit" id="nextButton" onclick="nextPage()">Lanjut</button>
+            <button type="button" id="prevButton" onclick="prevPage()" style="display:none;">Kembali</button>
+            <button type="submit" id="submitButton" style="display:none;">Kirim Jawaban</button>
         </div>
     </form>
 
@@ -149,6 +164,26 @@
             if (confirm("Semua data yang telah diisi akan terhapus. Apakah Anda yakin ingin kembali?")) {
                 window.location.href = '{{ url('/') }}';
             }
+        }
+
+        function nextPage() {
+            const allAnswered = Array.from(document.querySelectorAll('.page1 input[type="radio"]:checked')).length === 10;
+            if (allAnswered) {
+                document.querySelectorAll('.page1').forEach(element => element.style.display = 'none');
+                document.querySelectorAll('.page2').forEach(element => element.style.display = 'block');
+                document.getElementById('backButton').style.display = 'none';
+                document.getElementById('nextButton').style.display = 'none';
+                document.getElementById('prevButton').style.display = 'block';
+                document.getElementById('submitButton').style.display = 'block';
+            }
+        }
+        function prevPage() {
+            document.querySelectorAll('.page2').forEach(element => element.style.display = 'none');
+            document.querySelectorAll('.page1').forEach(element => element.style.display = 'block');
+            document.getElementById('backButton').style.display = 'block';
+            document.getElementById('nextButton').style.display = 'block';
+            document.getElementById('prevButton').style.display = 'none';
+            document.getElementById('submitButton').style.display = 'none';
         }
     </script>
 </body>
